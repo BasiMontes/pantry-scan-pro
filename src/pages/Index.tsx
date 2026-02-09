@@ -1,14 +1,13 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { ScannerPage } from "@/components/scanner/ScannerPage";
+import type { ScannedItem } from "@/types/scanner";
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const handleAddToPantry = (items: ScannedItem[]) => {
+    // This callback is where you'd integrate with your existing Fresco pantry
+    console.log("Items to add to pantry:", items);
+  };
+
+  return <ScannerPage onAddToPantry={handleAddToPantry} />;
 };
 
 export default Index;
